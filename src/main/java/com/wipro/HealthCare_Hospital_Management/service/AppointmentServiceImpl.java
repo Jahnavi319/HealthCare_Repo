@@ -1,5 +1,7 @@
 package com.wipro.healthcare_hospital_management.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
@@ -37,7 +39,31 @@ public class AppointmentServiceImpl implements AppointmentService{
 		
 		return AppointmentMapping.mapToAppointmentDto(appointment);
 	}
+
+	@Override
+	public AppointmentDto updateAppointment(Long id, AppointmentDto appointmentDto) {
+		Appointment appointment = appointmentRepository.findById(id).orElseThrow(() -> new RuntimeException("Appointment does not exist"));
+        Appointment savedAppointment = appointmentRepository.save(appointment);
+        return AppointmentMapping.mapToAppointmentDto(savedAppointment);
+    }
 	
+	@Override
+	public void deleteAppointment(Long id) {
+		if (!appointmentRepository.existsById(id)) {
+            throw new RuntimeException("Appointment does not exist");
+        }
+        appointmentRepository.deleteById(id);
+		
+	}
+
+
 	
 
 }
+
+
+	
+	
+	
+
+

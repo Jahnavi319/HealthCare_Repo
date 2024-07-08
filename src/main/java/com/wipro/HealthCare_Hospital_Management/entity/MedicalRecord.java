@@ -1,5 +1,6 @@
 package com.wipro.healthcare_hospital_management.entity;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -22,19 +23,29 @@ public class MedicalRecord {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "patientName")
     private String patientName;
+
+	@Column(name = "age")
     private int age;
+
+	@Column(name = "diagnosis")
     private String diagnosis;
+
+	@Column(name = "treatment")
     private String treatment;
+
+	@Column(name = "dateOfRecord")
     private Date dateOfRecord;
     
-/*    @OneToOne
+    @OneToOne
     @JoinColumn(name = "appointment_id")
     private Appointment appointment;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
-    private Patient patient;*/
+    private Patient patient;
 
 
     

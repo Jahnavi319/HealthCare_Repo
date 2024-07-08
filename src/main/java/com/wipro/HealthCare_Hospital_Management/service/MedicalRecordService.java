@@ -7,6 +7,12 @@ public interface MedicalRecordService {
 	MedicalRecordDto createMedicalRecord(MedicalRecordDto medicalRecordDto);
 	
 	MedicalRecordDto getMedicalRecordById(Long Id);
+
+	void deleteMedicalRecord(Long id);
+
+	MedicalRecordDto updateMedicalRecord(Long id, MedicalRecordDto medicalRecordDto);
+
+	
 	
 
 

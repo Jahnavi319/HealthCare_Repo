@@ -10,8 +10,7 @@ public class AppointmentMapping {
 		Appointment appointment = new Appointment();
 				
 		appointment.setId(appointmentDto.getId());		
-		appointment.setStartTime(appointmentDto.getStartTime());		
-		appointment.setEndTime(appointmentDto.getEndTime());
+		appointment.setdate_time(appointmentDto.getDate_time());
 		appointment.setDescription(appointmentDto.getDescription());	
 		appointment.setLocation(appointmentDto.getLocation());				
 				
@@ -23,8 +22,7 @@ public class AppointmentMapping {
 		AppointmentDto appointmentDto = new AppointmentDto();
 				
 		appointmentDto.setId(appointment.getId());		
-		appointmentDto.setStartTime(appointment.getStartTime());		
-		appointmentDto.setEndTime(appointment.getEndTime());		
+		appointmentDto.setDate_time(appointment.getdate_time());
 		appointmentDto.setDescription(appointment.getDescription());
 		appointmentDto.setLocation(appointment.getLocation());		
 			

@@ -5,6 +5,7 @@ import jakarta.persistence.JoinColumn;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,26 +25,46 @@ public class Patient {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long patientId;
+
+	@Column(name = "username")
 	private String username;
+
+	@Column(name = "password")
 	private String password;
+
+	@Column(name = "fullName")
 	private String fullName;
+
+	@Column(name = "age")
 	private int age;
+
+	@Column(name = "gender")
     private String gender;
+
+	@Column(name = "contactNumber")
     private String contactNumber;
+
+	@Column(name = "appointments")
     private String appointments;
+
+	@Column(name = "medicalHistory")
     private String medicalHistory;
-    private String symptoms;	
+
+	@Column(name = "symptoms")
+    private String symptoms;
+
+	@Column(name = "nature_of_visit")
     private String nature_of_visit;
     
-  /*  @ManyToMany
+    @ManyToMany
     @JoinTable(name = "Doctor_Patient",joinColumns = @JoinColumn(name = "patient_id"),inverseJoinColumns = @JoinColumn(name = "doctor_id"))
     private Set<Doctor> doctors = new HashSet<>();
 
     @OneToMany(mappedBy = "patient")
-    private Set<Appointment> appointments = new HashSet<>();
+    private Set<Appointment> appointment = new HashSet<>();
 
     @OneToMany(mappedBy = "patient")
-    private Set<MedicalRecord> medicalRecords = new HashSet<>();*/
+    private Set<MedicalRecord> medicalRecords = new HashSet<>();
 
 
     

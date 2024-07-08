@@ -10,4 +10,8 @@ public interface PatientService {
 	
 	PatientDto getPatientById(Long Id);
 
+	void deletePatient(Long id);
+
+	PatientDto updatePatient(Long id, PatientDto patientDto);
+
 }

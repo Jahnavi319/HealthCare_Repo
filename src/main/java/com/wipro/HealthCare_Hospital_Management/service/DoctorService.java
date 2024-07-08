@@ -8,4 +8,8 @@ public interface DoctorService {
 	
 	DoctorDto getDoctorById(Long Id);
 
+	void deleteDoctor(Long id);
+
+	DoctorDto updateDoctor(Long id, DoctorDto doctorDto);
+
 }

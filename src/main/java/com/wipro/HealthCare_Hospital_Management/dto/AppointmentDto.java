@@ -5,20 +5,21 @@ public class AppointmentDto {
 	
 
 	private Long Id; 
-	private LocalDateTime startTime;
-    private LocalDateTime endTime;
+	private LocalDateTime date_time;
+  //  private LocalDateTime endTime;
     private String description;
     private String location;
 
+    
     
     public AppointmentDto() {
 		super();
 	}
 
-    public AppointmentDto( Long Id,LocalDateTime startTime, LocalDateTime endTime, String description, String location) {
+    public AppointmentDto( Long Id,LocalDateTime date_time, String description, String location) {
         this.Id = Id;
-    	this.startTime = startTime;
-        this.endTime = endTime;
+    	this.date_time = date_time;
+       //.endTime = endTime;
         this.description = description;
         this.location = location;
     }
@@ -31,20 +32,13 @@ public class AppointmentDto {
 		Id = id;
 	}
 
-	public LocalDateTime getStartTime() {
-		return startTime;
+	
+	public LocalDateTime getDate_time() {
+		return date_time;
 	}
 
-	public void setStartTime(LocalDateTime startTime) {
-		this.startTime = startTime;
-	}
-
-	public LocalDateTime getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(LocalDateTime endTime) {
-		this.endTime = endTime;
+	public void setDate_time(LocalDateTime date_time) {
+		this.date_time = date_time;
 	}
 
 	public String getDescription() {
@@ -61,6 +55,11 @@ public class AppointmentDto {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public boolean isPresent() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
     

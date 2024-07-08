@@ -3,6 +3,10 @@ package com.wipro.healthcare_hospital_management.entity;
 
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -21,17 +26,31 @@ public class Doctor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int doctorId;
+
+	@Column(name = "doctorName")
 	private String doctorName;
+
+	@Column(name = "phoneNumber")
 	private Long phoneNumber;
+
+	@Column(name = "email")
 	private String email;
+
+	@Column(name = "yearsOfExperience")
 	private int yearsOfExperience;
+
+	@Column(name = "specialization")
 	private String specialization;
 	
-/*	@ManyToMany(mappedBy = "doctors")
+	@ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
+	
+    @ManyToMany(mappedBy = "doctors")
 	private Set<Patient> patients = new HashSet<>();
 
 	@OneToMany(mappedBy = "doctor")
-	private Set<Appointment> appointments = new HashSet<>();*/
+	private Set<Appointment> appointments = new HashSet<>();
 	    
 	public Doctor() {
 		super();
