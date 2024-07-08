@@ -1,8 +1,7 @@
-package com.wipro.HealthCare_Hospital_Management.Mapping;
+package com.wipro.healthcare_hospital_management.mapping;
 
-import com.wipro.HealthCare_Hospital_Management.dto.AppointmentDto;
-
-import com.wipro.HealthCare_Hospital_Management.entity.Appointment;
+import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.entity.Appointment;
 
 public class AppointmentMapping {
 	

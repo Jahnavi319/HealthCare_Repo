@@ -1,4 +1,4 @@
-package com.wipro.HealthCare_Hospital_Management.dto;
+package com.wipro.healthcare_hospital_management.dto;
 
 import java.util.Date;
 

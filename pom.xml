@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wipro</groupId>
-	<artifactId>HealthCare_Hospital_Management</artifactId>
+	<artifactId>Healthcare_Hospital</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HealthCare_Hospital_Management</name>
+	<name>Healthcare_Hospital</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

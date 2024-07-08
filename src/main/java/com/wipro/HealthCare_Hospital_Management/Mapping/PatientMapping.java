@@ -1,7 +1,7 @@
-package com.wipro.HealthCare_Hospital_Management.Mapping;
+package com.wipro.healthcare_hospital_management.mapping;
 
-import com.wipro.HealthCare_Hospital_Management.dto.PatientDto;
-import com.wipro.HealthCare_Hospital_Management.entity.Patient;
+import com.wipro.healthcare_hospital_management.dto.PatientDto;
+import com.wipro.healthcare_hospital_management.entity.Patient;
 
 public class PatientMapping {
 

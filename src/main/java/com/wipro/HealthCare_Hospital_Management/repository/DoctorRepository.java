@@ -1,10 +1,11 @@
-package com.wipro.HealthCare_Hospital_Management.repository;
+package com.wipro.healthcare_hospital_management.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.wipro.HealthCare_Hospital_Management.dto.DoctorDto;
-import com.wipro.HealthCare_Hospital_Management.entity.Doctor;
+import com.wipro.healthcare_hospital_management.dto.DoctorDto;
+import com.wipro.healthcare_hospital_management.entity.Doctor;
+
 
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor, Long>{

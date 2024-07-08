@@ -1,10 +1,11 @@
-package com.wipro.HealthCare_Hospital_Management.repository;
+package com.wipro.healthcare_hospital_management.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.wipro.HealthCare_Hospital_Management.dto.AppointmentDto;
-import com.wipro.HealthCare_Hospital_Management.entity.Appointment;
+import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.entity.Appointment;
+
 
 @Repository
 public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
@@ -14,3 +15,4 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
 	//Appointment findById(Appointment appointment);
 
 }
+

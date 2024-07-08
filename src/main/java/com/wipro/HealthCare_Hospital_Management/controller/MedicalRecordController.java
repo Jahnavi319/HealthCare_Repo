@@ -1,15 +1,16 @@
-package com.wipro.HealthCare_Hospital_Management.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package com.wipro.healthcare_hospital_management.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.wipro.HealthCare_Hospital_Management.dto.MedicalRecordDto;
-import com.wipro.HealthCare_Hospital_Management.entity.MedicalRecord;
-import com.wipro.HealthCare_Hospital_Management.services.MedicalRecordService;
-
+import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
+import com.wipro.healthcare_hospital_management.service.MedicalRecordService;
 
 
 @RestController

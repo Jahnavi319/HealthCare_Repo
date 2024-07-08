@@ -1,4 +1,4 @@
-package com.wipro.HealthCare_Hospital_Management.entity;
+package com.wipro.healthcare_hospital_management.entity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

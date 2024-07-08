@@ -1,4 +1,5 @@
-package com.wipro.HealthCare_Hospital_Management.entity;
+package com.wipro.healthcare_hospital_management.entity;
+
 import java.util.HashSet;
 import jakarta.persistence.JoinColumn;
 import java.util.Set;

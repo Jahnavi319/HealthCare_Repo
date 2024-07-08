@@ -1,10 +1,7 @@
-package com.wipro.HealthCare_Hospital_Management.Mapping;
+package com.wipro.healthcare_hospital_management.mapping;
 
-
-
-import com.wipro.HealthCare_Hospital_Management.dto.MedicalRecordDto;
-
-import com.wipro.HealthCare_Hospital_Management.entity.MedicalRecord;
+import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
+import com.wipro.healthcare_hospital_management.entity.MedicalRecord;
 
 public class MedicalRecordMapping {
 	

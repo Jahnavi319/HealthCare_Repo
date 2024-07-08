@@ -1,5 +1,4 @@
-package com.wipro.HealthCare_Hospital_Management.entity;
-
+package com.wipro.healthcare_hospital_management.entity;
 import java.time.LocalDateTime;
 
 

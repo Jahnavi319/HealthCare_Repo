@@ -1,6 +1,4 @@
-package com.wipro.HealthCare_Hospital_Management.controller;
-
-import java.util.List;
+package com.wipro.healthcare_hospital_management.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wipro.HealthCare_Hospital_Management.dto.DoctorDto;
-import com.wipro.HealthCare_Hospital_Management.entity.Doctor;
-import com.wipro.HealthCare_Hospital_Management.repository.DoctorRepository;
-import com.wipro.HealthCare_Hospital_Management.services.DoctorService;
+import com.wipro.healthcare_hospital_management.dto.DoctorDto;
+import com.wipro.healthcare_hospital_management.service.DoctorService;
+
 
 @RestController
 @RequestMapping("/api/doctor")
@@ -48,3 +45,4 @@ public class DoctorController {
 	
 
 }
+

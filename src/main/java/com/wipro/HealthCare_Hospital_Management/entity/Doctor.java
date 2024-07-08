@@ -1,11 +1,8 @@
-package com.wipro.HealthCare_Hospital_Management.entity;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+package com.wipro.healthcare_hospital_management.entity;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
 
-import jakarta.persistence.CascadeType;
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;

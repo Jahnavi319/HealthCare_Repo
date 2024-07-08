@@ -1,10 +1,5 @@
-package com.wipro.HealthCare_Hospital_Management.controller;
+package com.wipro.healthcare_hospital_management.controller;
 
-import java.util.List;
-
-
-
-import org.apache.catalina.authenticator.SavedRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wipro.HealthCare_Hospital_Management.dto.AppointmentDto;
-import com.wipro.HealthCare_Hospital_Management.entity.Appointment;
-import com.wipro.HealthCare_Hospital_Management.repository.AppointmentRepository;
-import com.wipro.HealthCare_Hospital_Management.services.AppointmentService;
+import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.service.AppointmentService;
+
 
 @RestController
 @RequestMapping("/api/appointment")
