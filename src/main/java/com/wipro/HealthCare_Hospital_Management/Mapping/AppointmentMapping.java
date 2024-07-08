@@ -8,28 +8,27 @@ public class AppointmentMapping {
 	
 	public static Appointment mapToAppoinment(AppointmentDto appointmentDto) {
 		
-		Appointment appointment = new Appointment(
+		Appointment appointment = new Appointment();
 				
-				appointmentDto.getId(),
-				appointmentDto.getStartTime(),
-				appointmentDto.getEndTime(),
-				appointmentDto.getDescription(),
-				appointmentDto.getLocation()
+		appointment.setId(appointmentDto.getId());		
+		appointment.setStartTime(appointmentDto.getStartTime());		
+		appointment.setEndTime(appointmentDto.getEndTime());
+		appointment.setDescription(appointmentDto.getDescription());	
+		appointment.setLocation(appointmentDto.getLocation());				
 				
-				);
 		return appointment;
 	}
 	
 	public static AppointmentDto mapToAppointmentDto(Appointment appointment) {
 		
-		AppointmentDto appointmentDto = new AppointmentDto(
+		AppointmentDto appointmentDto = new AppointmentDto();
 				
-				appointment.getId(),
-				appointment.getStartTime(),
-				appointment.getEndTime(),
-				appointment.getDescription(),
-				appointment.getLocation()
-				);
+		appointmentDto.setId(appointment.getId());		
+		appointmentDto.setStartTime(appointment.getStartTime());		
+		appointmentDto.setEndTime(appointment.getEndTime());		
+		appointmentDto.setDescription(appointment.getDescription());
+		appointmentDto.setLocation(appointment.getLocation());		
+			
 		
 		return appointmentDto;
 		

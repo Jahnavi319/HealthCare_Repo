@@ -2,12 +2,14 @@ package com.wipro.HealthCare_Hospital_Management.entity;
 
 import java.time.LocalDateTime;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,14 +25,19 @@ public class Appointment {
     private String description;
     private String location;
 
- /*  @ManyToOne
-   @JoinColumn(name = "doctorId")
-   private Doctor doctor;
-   
-   
-   @ManyToOne
-   @JoinColumn(name = "patientId")
-   private Patient patient;*/
+   /* @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
+
+    @OneToOne(mappedBy = "appointment")
+    private MedicalRecord medicalRecord;*/
+
+    
+
     
     public Appointment() {
 		super();

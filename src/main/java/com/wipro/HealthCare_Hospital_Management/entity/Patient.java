@@ -1,10 +1,17 @@
 package com.wipro.HealthCare_Hospital_Management.entity;
+import java.util.HashSet;
+import jakarta.persistence.JoinColumn;
+import java.util.Set;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -12,6 +19,7 @@ import jakarta.persistence.Table;
 @Table(name = "Patients")
 public class Patient {
 
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long patientId;
@@ -26,9 +34,19 @@ public class Patient {
     private String symptoms;	
     private String nature_of_visit;
     
- /*   @OneToOne(mappedBy = "patient",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private MedicalRecord medicalRecord;*/
+  /*  @ManyToMany
+    @JoinTable(name = "Doctor_Patient",joinColumns = @JoinColumn(name = "patient_id"),inverseJoinColumns = @JoinColumn(name = "doctor_id"))
+    private Set<Doctor> doctors = new HashSet<>();
+
+    @OneToMany(mappedBy = "patient")
+    private Set<Appointment> appointments = new HashSet<>();
+
+    @OneToMany(mappedBy = "patient")
+    private Set<MedicalRecord> medicalRecords = new HashSet<>();*/
+
+
     
+ 
 
 	public Patient(Long patientId, String username, String password, String fullName, int age,
 			String gender, String contactNumber, String appointments, String medicalHistory, String symptoms,

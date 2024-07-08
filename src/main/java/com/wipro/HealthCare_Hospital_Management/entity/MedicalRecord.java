@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -27,21 +28,15 @@ public class MedicalRecord {
     private String treatment;
     private Date dateOfRecord;
     
- /*   @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "patientId",referencedColumnName = "id")
-    private Patient patient;
-    
-    @OneToMany(mappedBy = "medicalRecord",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Treatment> treatments;
-    
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "doctorId")
-    private Doctor doctor;
-    
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "medical_record_medication",joinColumns = @JoinColumn(name ="medical_record_id"),inverseJoinColumns = @JoinColumn(name = "medication_id"))
-    private List<Medication> medications;*/
-    
+/*    @OneToOne
+    @JoinColumn(name = "appointment_id")
+    private Appointment appointment;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;*/
+
+
     
     // Constructors
     public MedicalRecord() {

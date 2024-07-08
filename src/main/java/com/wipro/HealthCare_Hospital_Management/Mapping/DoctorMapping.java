@@ -9,6 +9,8 @@ public class DoctorMapping {
 	public static Doctor mapToDoctor(DoctorDto doctorDto) {
 		
 		Doctor doctor = new Doctor();
+		
+		
 		doctor.setDoctorName(doctorDto.getDoctorName());
 		doctor.setEmail(doctorDto.getEmail());
 		doctor.setPhoneNumber(doctorDto.getPhoneNumber());
@@ -23,11 +25,13 @@ public class DoctorMapping {
 	public static DoctorDto mapToDoctorDto(Doctor doctor) {
 		
 		DoctorDto doctorDto = new DoctorDto();
+		
 		doctorDto.setDoctorName(doctor.getDoctorName());
 		doctorDto.setEmail(doctor.getEmail());
 		doctorDto.setPhoneNumber(doctor.getPhoneNumber());
 		doctorDto.setSpecialization(doctor.getSpecialization());
 		doctorDto.setYearsOfExperience(doctor.getYearsOfExperience());
+		
 		return doctorDto;
 		
 	}

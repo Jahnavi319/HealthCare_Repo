@@ -42,20 +42,12 @@ public class AppointmentController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<AppointmentDto> getAppointmentById(@PathVariable Long id){
+		
 		AppointmentDto appointmentDto = appointmentService.getAppointmentById(id);
 		return ResponseEntity.ok(appointmentDto);
 		
 	}
 	
 	
-/*	@RequestMapping("/insert")
-	public AppointmentDto createAppointment(@RequestBody AppointmentDto appointmentdto) {
-		
-		return appointmentRepository.save(appointmentdto);
-		
-	}
-	@GetMapping("/show")
-	public List<Appointment> getAllAppointment(){
-		return appointmentService.findAll();
-	}*/
+
 }

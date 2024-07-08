@@ -1,5 +1,7 @@
 package com.wipro.HealthCare_Hospital_Management.entity;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
 
@@ -10,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -27,25 +30,23 @@ public class Doctor {
 	private int yearsOfExperience;
 	private String specialization;
 	
-	
-	/* @OneToOne(cascade = CascadeType.ALL)
-	 @JoinColumn(name = "address_id",referencedColumnName = "id")
-	 private Address address;
-	    
-	 @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	 private List<Appointment> appointments;*/
+/*	@ManyToMany(mappedBy = "doctors")
+	private Set<Patient> patients = new HashSet<>();
+
+	@OneToMany(mappedBy = "doctor")
+	private Set<Appointment> appointments = new HashSet<>();*/
 	    
 	public Doctor() {
 		super();
 		
 	}
 
-	@Override
+/*	@Override
 	public String toString() {
 		return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", phoneNumber=" + phoneNumber
 				+ ", email=" + email + ", yearsOfExperience=" + yearsOfExperience + ", specialization=" + specialization
 				+ "]";
-	}
+	}*/
 
     
 	

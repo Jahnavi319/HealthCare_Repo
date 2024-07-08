@@ -12,12 +12,12 @@ public class DoctorDto {
 	
 	
 	
-	@Override
+	/*@Override
 	public String toString() {
 		return "DoctorDto [doctorId=" + doctorId + ", doctorName=" + doctorName + ", phoneNumber=" + phoneNumber
 				+ ", email=" + email + ", yearsOfExperience=" + yearsOfExperience + ", specialization=" + specialization
 				+ "]";
-	}
+	}*/
 
 	public DoctorDto() {
 		super();

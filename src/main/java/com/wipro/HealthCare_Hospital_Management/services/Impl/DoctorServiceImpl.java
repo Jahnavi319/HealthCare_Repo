@@ -32,7 +32,7 @@ public class DoctorServiceImpl implements DoctorService{
 	@Override
 	public DoctorDto createDoctor(DoctorDto doctorDto) {
 		Doctor doctor = DoctorMapping.mapToDoctor(doctorDto);
-		System.out.println("++++++++++++++++++++++++++++++++++++++"+doctor);
+		//System.out.println("++++++++++++++++++++++++++++++++++++++"+doctor);
 		Doctor savedDoctor = doctorRepository.save(doctor);
 		return DoctorMapping.mapToDoctorDto(savedDoctor);
 		

@@ -1,38 +1,42 @@
 package com.wipro.HealthCare_Hospital_Management.controller;
 
-import java.util.List;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.HealthCare_Hospital_Management.dto.PatientDto;
-import com.wipro.HealthCare_Hospital_Management.entity.Patient;
-import com.wipro.HealthCare_Hospital_Management.repository.PatientRepository;
+import com.wipro.HealthCare_Hospital_Management.services.PatientService;
 
 @RestController
 @RequestMapping("/api/patient")
 public class PatientController {
-	
-	private PatientRepository patientRepository;
 
-	public PatientController(PatientRepository patientRepository) {
+	private PatientService patientService;
+
+	public PatientController(PatientService patientService) {
 		super();
-		this.patientRepository = patientRepository;
+		this.patientService = patientService;
 	}
-
-	
 	@PostMapping("/insert")
-	public Patient createPatient(@RequestBody Patient patient) {
-		return patientRepository.save(patient);
+	public ResponseEntity<PatientDto> addPatient(@RequestBody PatientDto patientDto){
+		
+        System.out.println(patientDto);
+		return new ResponseEntity<>(patientService.createPatient(patientDto),HttpStatus.CREATED);
+		
 		
 	}
 	
-	@GetMapping
-	public List<Patient> getAllPatient(){
-		return patientRepository.findAll();
+	@GetMapping("/{id}")
+	public ResponseEntity<PatientDto> getPatientById(@PathVariable Long id){
+		
+		PatientDto patientDto = patientService.getPatientById(id);
+		return ResponseEntity.ok(patientDto);
 		
 	}
+	
 }

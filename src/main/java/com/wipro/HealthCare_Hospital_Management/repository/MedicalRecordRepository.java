@@ -11,6 +11,6 @@ public interface MedicalRecordRepository extends JpaRepository<MedicalRecord, Lo
 
 	MedicalRecordDto save(MedicalRecordDto medicalRecordDto);
 
-	//MedicalRecord findById(MedicalRecord medicalRecord);
+	
 
 }
