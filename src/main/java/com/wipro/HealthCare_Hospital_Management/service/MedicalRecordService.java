@@ -4,7 +4,9 @@ import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
 
 public interface MedicalRecordService {
 
-/*	MedicalRecordDto createMedicalRecord(MedicalRecordDto medicalRecordDto);
+	
+
+	MedicalRecordDto createMedicalRecord(MedicalRecordDto medicalRecordDto);
 	
 	MedicalRecordDto getMedicalRecordById(Long Id);
 
@@ -13,7 +15,7 @@ public interface MedicalRecordService {
 	MedicalRecordDto updateMedicalRecord(Long id, MedicalRecordDto medicalRecordDto);
 
 	
-	*/
+	
 
 
 }

@@ -37,25 +37,19 @@ public class Appointment {
 	
 	@Column(name = "location")
     private String location;
-    
-	
-	
-	/*@ManyToOne
-    @JoinColumn(name = "doctorId")
-    private Doctor doctor;
+	 
+	@ManyToOne
+    @JoinColumn(name = "doctor_id")
+	private Doctor doctor;
 
     @ManyToOne
-    @JoinColumn(name = "patientId")
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
     @OneToOne(mappedBy = "appointment")
-    private MedicalRecord medicalRecord;*/
+    private MedicalRecord medicalRecord;
 
-
- 
-    
-
-	
+	    
 
 	public Appointment(Long appointmentId, String patientName, String patientAge, Long contactNumber,
 			LocalDateTime dateAndTime, String description, String location, Doctor doctor, Patient patient,

@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -28,12 +29,13 @@ public class Admin {
 	
 	@Column(name = "role")
 	private int role;
-	
-/*	@OneToMany(mappedBy = "admin")
-	private Set<Doctor> doctors = new HashSet<>();*/
 
 
+    @OneToMany(mappedBy = "admin")
+    private Set<Doctor> doctors = new HashSet<>();
 
+ 
+    
 	public Admin() {
 		super();
 		

@@ -1,6 +1,8 @@
 package com.wipro.healthcare_hospital_management.entity;
 
 import java.util.HashSet;
+import java.util.List;
+
 import jakarta.persistence.JoinColumn;
 import java.util.Set;
 
@@ -56,30 +58,21 @@ public class Patient {
 	@Column(name = "natureOfVisit")
     private String natureOfVisit;
 	
-	/*@ManyToMany
-	@JoinTable(
-	name = "Doctor_Patient",
-	joinColumns = @JoinColumn(name = "patientId"),
-	inverseJoinColumns = @JoinColumn(name = "doctorId")
-	)
-	private Set<Doctor> doctors = new HashSet<>();
+	@ManyToMany
+    @JoinTable(
+        name = "Doctor_Patient",
+        joinColumns = @JoinColumn(name = "patient_id"),
+        inverseJoinColumns = @JoinColumn(name = "doctor_id")
+    )
+    private Set<Doctor> doctors = new HashSet<>();
 
-	@OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient")
     private Set<Appointment> appointment = new HashSet<>();
 
     @OneToMany(mappedBy = "patient")
-    private Set<MedicalRecord> medicalRecords = new HashSet<>();*/
+    private Set<MedicalRecord> medicalRecords = new HashSet<>();
 
-
-    
-/*    @OneToMany(mappedBy = "patient")
-    private Set<Appointment> appointment;
-
-	 @OneToOne(mappedBy = "patient")
-	 private MedicalRecord medicalRecord;*/
-
-
-    
+ 
  
 
 	public Patient(Long patientId, String userName, String password, String fullName, int age,

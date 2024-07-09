@@ -30,6 +30,19 @@ public class Doctor {
 
 	@Column(name = "doctorName")
 	private String doctorName;
+	
+    @ManyToOne
+    @JoinColumn(name = "admins")
+    private Admin admin;
+
+    @ManyToMany(mappedBy = "doctors")
+    private Set<Patient> patients = new HashSet<>();
+
+    @OneToMany(mappedBy = "doctor")
+    private Set<Appointment> appointments = new HashSet<>();
+
+	
+
 
 	public Doctor(int doctorId, String doctorName, String email, int yearsOfExperience, String specialization) {
 		super();
@@ -51,16 +64,7 @@ public class Doctor {
 	
 
 	
-	/* @ManyToOne
-	    @JoinColumn(name = "admin_id")
-	    private Admin admin;
 
-	    @ManyToMany(mappedBy = "doctors")
-	    private Set<Patient> patients = new HashSet<>();
-
-	    @OneToMany(mappedBy = "doctor")
-	    private Set<Appointment> appointments = new HashSet<>();
-*/
 
 
 	    

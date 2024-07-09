@@ -39,17 +39,17 @@ public class MedicalRecord {
 
 	@Column(name = "appointmentId")
     private Long appointmentId;
- 
-/*	@OneToOne
-	@JoinColumn(name = "appointmentId")
-    private Appointment appointment;
 	
-	@ManyToOne
-	@JoinColumn(name = "patientId")
-	private Patient patient;*/
+    @OneToOne
+    @JoinColumn(name = "appointment")
+    private Appointment appointment;
+
+    @ManyToOne
+    @JoinColumn(name = "patients")
+    private Patient patient;
 
 
-
+ 
 
    
 

@@ -11,7 +11,7 @@ import com.wipro.healthcare_hospital_management.repository.MedicalRecordReposito
 
 
 
-/*@Service
+@Service
 public class MedicalRecordServiceImpl implements MedicalRecordService {
 	
 	private MedicalRecordRepository medicalRecordRepository;
@@ -58,4 +58,4 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
 	}
 	
 
-}*/
+}
