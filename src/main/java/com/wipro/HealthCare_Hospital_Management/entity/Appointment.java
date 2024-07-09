@@ -12,67 +12,111 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Appointment")
+@Table(name = "appointment")
 public class Appointment {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id; 
+	private Long appointmentId; 
+
+	@Column(name = "patientName")
+	private String patientName;
 	
-	@Column(name = "date_time")
-	private LocalDateTime date_time;
+	@Column(name = "patientAge")
+	private String patientAge;
+	
+	@Column(name = "contactNumber")
+	private Long contactNumber;
+	
+	@Column(name = "dateAndTime")
+	private LocalDateTime dateAndTime;
 	
 	@Column(name = "description")
     private String description;
 	
 	@Column(name = "location")
     private String location;
+    
+	
+	
+	/*@ManyToOne
+    @JoinColumn(name = "doctorId")
+    private Doctor doctor;
 
     @ManyToOne
-    @JoinColumn(name = "doctor_id")
-    Doctor doctor;
-
-    @ManyToOne
-    @JoinColumn(name = "patient_id")
-    Patient patient;
+    @JoinColumn(name = "patientId")
+    private Patient patient;
 
     @OneToOne(mappedBy = "appointment")
-    private MedicalRecord medicalRecord;
+    private MedicalRecord medicalRecord;*/
 
+
+ 
     
 
-    
-    public Appointment() {
+	
+
+	public Appointment(Long appointmentId, String patientName, String patientAge, Long contactNumber,
+			LocalDateTime dateAndTime, String description, String location, Doctor doctor, Patient patient,
+			MedicalRecord medicalRecord) {
 		super();
+		this.appointmentId = appointmentId;
+		this.patientName = patientName;
+		this.patientAge = patientAge;
+		this.contactNumber = contactNumber;
+		this.dateAndTime = dateAndTime;
+		this.description = description;
+		this.location = location;
+	
 	}
 
-	// Constructor
-    public Appointment( Long Id,LocalDateTime date_time, String description, String location) {
-        this.Id = Id;
-    	this.date_time = date_time;
-      
-        this.description = description;
-        this.location = location;
-    }
-
-	public Long getId() {
-		return Id;
-	}
-
-	public void setId(Long id) {
-		Id = id;
-	}
-
-	public LocalDateTime getdate_time() {
-		return date_time;
-	}
-
-	public void setdate_time(LocalDateTime date_time) {
-		this.date_time = date_time;
+	public Appointment() {
+		super();
+		
 	}
 
 
+
+	public Long getAppointmentId() {
+		return appointmentId;
+	}
+
+	public void setAppointmentId(Long appointmentId) {
+		this.appointmentId = appointmentId;
+	}
+
+	public String getPatientName() {
+		return patientName;
+	}
+
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
+	}
+
+	public String getPatientAge() {
+		return patientAge;
+	}
+
+	public void setPatientAge(String patientAge) {
+		this.patientAge = patientAge;
+	}
+
+	public Long getContactNumber() {
+		return contactNumber;
+	}
+
+	public void setContactNumber(Long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+
+	public LocalDateTime getDateAndTime() {
+		return dateAndTime;
+	}
+
+	public void setDateAndTime(LocalDateTime dateAndTime) {
+		this.dateAndTime = dateAndTime;
+	}
 
 	public String getDescription() {
 		return description;
@@ -89,6 +133,30 @@ public class Appointment {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+
+/*	public Doctor getDoctor() {
+		return doctor;
+	}
+
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+	public MedicalRecord getMedicalRecord() {
+		return medicalRecord;
+	}
+
+	public void setMedicalRecord(MedicalRecord medicalRecord) {
+		this.medicalRecord = medicalRecord;
+	}*/
 
 
 }

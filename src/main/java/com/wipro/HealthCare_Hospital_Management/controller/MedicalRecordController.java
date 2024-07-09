@@ -16,7 +16,7 @@ import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
 import com.wipro.healthcare_hospital_management.service.MedicalRecordService;
 
 
-@RestController
+/*@RestController
 @RequestMapping("/api/medicalrecords")
 public class MedicalRecordController {
     
@@ -58,6 +58,6 @@ public class MedicalRecordController {
 		}
 
 	
-}
+}*/
 
 

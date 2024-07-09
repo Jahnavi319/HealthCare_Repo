@@ -16,7 +16,7 @@ public class PatientMapping {
 		patient.setAppointments(patientDto.getAppointments());
 		patient.setSymptoms(patientDto.getSymptoms());
 		patient.setMedicalHistory(patientDto.getMedicalHistory());
-		patient.setNature_of_visit(patientDto.getNature_of_visit());
+		patient.setNatureOfVisit(patientDto.getNatureOfVisit());
 		patient.setage(patientDto.getAge());
 		
 		return patient;
@@ -33,7 +33,7 @@ public class PatientMapping {
 		patientDto.setAppointments(patient.getAppointments());
 		patientDto.setSymptoms(patient.getSymptoms());
 		patientDto.setMedicalHistory(patient.getMedicalHistory());
-		patientDto.setNature_of_visit(patient.getNature_of_visit());
+		patientDto.setNatureOfVisit(patient.getNatureOfVisit());
 		patientDto.setAge(patient.getage());
 		
 		return patientDto;

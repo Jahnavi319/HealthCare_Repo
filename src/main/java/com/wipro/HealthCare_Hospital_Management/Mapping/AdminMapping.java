@@ -1,3 +1,4 @@
+
 package com.wipro.healthcare_hospital_management.mapping;
 
 import com.wipro.healthcare_hospital_management.dto.AdminDto;
@@ -14,11 +15,9 @@ public class AdminMapping {
 		Admin admin = new Admin();
 				
 		admin.setId(adminDto.getId());		
-		admin.setAdminname(adminDto.getAdminname());
-		admin.setSpeciality(adminDto.getSpeciality());	
-		admin.setDesignation(adminDto.getDesignation());
-		admin.setQalification(adminDto.getQalification());
-		admin.setExperience(adminDto.getExperience());	
+		admin.setUsername(adminDto.getUsername());
+		admin.setPassword(adminDto.getPassword());	
+		admin.setRole(adminDto.getRole());
 				
 		return admin;
 	}
@@ -28,11 +27,9 @@ public class AdminMapping {
 		AdminDto adminDto = new AdminDto();
 				
 		adminDto.setId(admin.getId());		
-		adminDto.setAdminname(admin.getAdminname());
-		adminDto.setSpeciality(admin.getSpeciality());
-		adminDto.setDesignation(admin.getDesignation());		
-		adminDto.setQalification(admin.getQalification());
-		adminDto.setExperience(admin.getExperience());	
+		adminDto.setUsername(admin.getUsername());
+		adminDto.setPassword(admin.getPassword());
+		adminDto.setRole(admin.getRole());		
 		
 		return adminDto;
 		

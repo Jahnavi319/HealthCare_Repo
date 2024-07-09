@@ -16,15 +16,16 @@ import jakarta.persistence.Table;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "medical_records")
 public class MedicalRecord {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "patientName")
+	private Long patientId;
+    
+    @Column(name = "patientName")
     private String patientName;
 
 	@Column(name = "age")
@@ -36,80 +37,88 @@ public class MedicalRecord {
 	@Column(name = "treatment")
     private String treatment;
 
-	@Column(name = "dateOfRecord")
-    private Date dateOfRecord;
-    
-    @OneToOne
-    @JoinColumn(name = "appointment_id")
+	@Column(name = "appointmentId")
+    private Long appointmentId;
+ 
+/*	@OneToOne
+	@JoinColumn(name = "appointmentId")
     private Appointment appointment;
+	
+	@ManyToOne
+	@JoinColumn(name = "patientId")
+	private Patient patient;*/
 
-    @ManyToOne
-    @JoinColumn(name = "patient_id")
-    private Patient patient;
 
 
-    
-    // Constructors
-    public MedicalRecord() {
-    }
 
-    public MedicalRecord(Long id, String patientName, Date dateOfBirth, String diagnosis, String treatment, Date dateOfRecord, int age) {
-    	this.id = id;
-        this.patientName = patientName;
-        this.age = age;
-        this.diagnosis = diagnosis;
-        this.treatment = treatment;
-        this.dateOfRecord = dateOfRecord;
-    }
+   
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+    public MedicalRecord(Long patientId, String patientName, int age, String diagnosis, String treatment,
+			Long appointmentId, Appointment appointment, Patient patient) {
+		super();
+		this.patientId = patientId;
+		this.patientName = patientName;
+		this.age = age;
+		this.diagnosis = diagnosis;
+		this.treatment = treatment;
+		this.appointmentId = appointmentId;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	
+	public MedicalRecord() {
+		super();
+		
+	}
 
-    public String getPatientName() {
-        return patientName;
-    }
 
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
-    }
+	public Long getPatientId() {
+		return patientId;
+	}
 
-    public int getage() {
-        return age;
-    }
+	public void setPatientId(Long patientId) {
+		this.patientId = patientId;
+	}
 
-    public void setage(int age) {
-        this.age = age;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public String getDiagnosis() {
-        return diagnosis;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
 
-    public void setDiagnosis(String diagnosis) {
-        this.diagnosis = diagnosis;
-    }
+	public Long getAppointmentId() {
+		return appointmentId;
+	}
 
-    public String getTreatment() {
-        return treatment;
-    }
+	public void setAppointmentId(Long appointmentId) {
+		this.appointmentId = appointmentId;
+	}
 
-    public void setTreatment(String treatment) {
-        this.treatment = treatment;
-    }
+	public String getPatientName() {
+		return patientName;
+	}
 
-    public Date getDateOfRecord() {
-        return dateOfRecord;
-    }
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
+	}
 
-    public void setDateOfRecord(Date dateOfRecord) {
-        this.dateOfRecord = dateOfRecord;
-    }	
+	public String getDiagnosis() {
+		return diagnosis;
+	}
+
+	public void setDiagnosis(String diagnosis) {
+		this.diagnosis = diagnosis;
+	}
+
+	public String getTreatment() {
+		return treatment;
+	}
+
+	public void setTreatment(String treatment) {
+		this.treatment = treatment;
+	}
+
 	
 
 

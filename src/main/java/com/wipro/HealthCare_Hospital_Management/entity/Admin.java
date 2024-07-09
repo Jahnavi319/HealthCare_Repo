@@ -12,7 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Admin")
+@Table(name = "admin")
 public class Admin {
 
 
@@ -20,73 +20,88 @@ public class Admin {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "adminname")
-	private String adminname;
+	@Column(name = "username")
+	private String username;
 	
-	@Column(name = "speciality")
-	private String speciality;
+	@Column(name = "password")
+	private String password;
 	
-	@Column(name = "Experience")
-	private int Experience;
+	@Column(name = "role")
+	private int role;
 	
-	@Column(name = "qualification")
-	private String qalification;
-	
-	@Column(name = "designation")
-	private String designation;
-	
-	@OneToMany(mappedBy = "admin")
-    private Set<Doctor> doctors = new HashSet<>();
+/*	@OneToMany(mappedBy = "admin")
+	private Set<Doctor> doctors = new HashSet<>();*/
+
+
 
 	public Admin() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	public Admin(int id, String adminname, String speciality, int experience, String qalification, String designation) {
+
+
+
+	public Admin(int id, String username, String password, int role, Set<Doctor> doctors) {
 		super();
 		this.id = id;
-		this.adminname = adminname;
-		this.speciality = speciality;
-		Experience = experience;
-		this.qalification = qalification;
-		this.designation = designation;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+		
 	}
+
+
+
 	public int getId() {
 		return id;
 	}
+
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getAdminname() {
-		return adminname;
+
+
+
+	public String getUsername() {
+		return username;
 	}
-	public void setAdminname(String adminname) {
-		this.adminname = adminname;
+
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getSpeciality() {
-		return speciality;
+
+
+
+	public String getPassword() {
+		return password;
 	}
-	public void setSpeciality(String speciality) {
-		this.speciality = speciality;
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public int getExperience() {
-		return Experience;
+
+
+
+	public int getRole() {
+		return role;
 	}
-	public void setExperience(int experience) {
-		Experience = experience;
+
+
+
+	public void setRole(int role) {
+		this.role = role;
 	}
-	public String getQalification() {
-		return qalification;
-	}
-	public void setQalification(String qalification) {
-		this.qalification = qalification;
-	}
-	public String getDesignation() {
-		return designation;
-	}
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
+
+
+
+
+
 	
 	
 }

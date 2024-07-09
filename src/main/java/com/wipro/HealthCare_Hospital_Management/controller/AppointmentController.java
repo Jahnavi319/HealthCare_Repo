@@ -48,11 +48,14 @@ public class AppointmentController {
 		
 	}
 	
+	
+	
     @PutMapping("/update/{id}")
 	public ResponseEntity<AppointmentDto> updateAppointment(@PathVariable Long id, @RequestBody AppointmentDto appointmentDto) {
     	AppointmentDto savedAppointment = appointmentService.updateAppointment(id, appointmentDto);
     	return ResponseEntity.ok(savedAppointment);
 	}
+    
 
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Void> deleteAppointment(@PathVariable Long id) {

@@ -1,5 +1,6 @@
 package com.wipro.healthcare_hospital_management.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.wipro.healthcare_hospital_management.dto.AdminDto;
@@ -17,9 +18,6 @@ public interface AppointmentService {
 	AppointmentDto updateAppointment(Long id, AppointmentDto appointmentDto);
 
 	
-
-	
-	
-	
+    
 	
 }

@@ -13,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -20,7 +21,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Doctors")
+@Table(name = "doctors")
 public class Doctor {
 	
 	@Id
@@ -30,8 +31,14 @@ public class Doctor {
 	@Column(name = "doctorName")
 	private String doctorName;
 
-	@Column(name = "phoneNumber")
-	private Long phoneNumber;
+	public Doctor(int doctorId, String doctorName, String email, int yearsOfExperience, String specialization) {
+		super();
+		this.doctorId = doctorId;
+		this.doctorName = doctorName;
+		this.email = email;
+		this.yearsOfExperience = yearsOfExperience;
+		this.specialization = specialization;
+	}
 
 	@Column(name = "email")
 	private String email;
@@ -42,27 +49,25 @@ public class Doctor {
 	@Column(name = "specialization")
 	private String specialization;
 	
-	@ManyToOne
-    @JoinColumn(name = "admin_id")
-    private Admin admin;
-	
-    @ManyToMany(mappedBy = "doctors")
-	private Set<Patient> patients = new HashSet<>();
 
-	@OneToMany(mappedBy = "doctor")
-	private Set<Appointment> appointments = new HashSet<>();
+	
+	/* @ManyToOne
+	    @JoinColumn(name = "admin_id")
+	    private Admin admin;
+
+	    @ManyToMany(mappedBy = "doctors")
+	    private Set<Patient> patients = new HashSet<>();
+
+	    @OneToMany(mappedBy = "doctor")
+	    private Set<Appointment> appointments = new HashSet<>();
+*/
+
+
 	    
 	public Doctor() {
 		super();
 		
 	}
-
-/*	@Override
-	public String toString() {
-		return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", phoneNumber=" + phoneNumber
-				+ ", email=" + email + ", yearsOfExperience=" + yearsOfExperience + ", specialization=" + specialization
-				+ "]";
-	}*/
 
     
 	
@@ -80,14 +85,6 @@ public class Doctor {
 
 	public void setDoctorName(String doctorName) {
 		this.doctorName = doctorName;
-	}
-
-	public Long getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(Long phoneNumber) {
-		this.phoneNumber = phoneNumber;
 	}
 
 	public String getEmail() {

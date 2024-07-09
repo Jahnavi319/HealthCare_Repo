@@ -9,10 +9,9 @@ public class DoctorMapping {
 		
 		Doctor doctor = new Doctor();
 		
-		
+		doctor.setDoctorId(doctorDto.getDoctorId());
 		doctor.setDoctorName(doctorDto.getDoctorName());
 		doctor.setEmail(doctorDto.getEmail());
-		doctor.setPhoneNumber(doctorDto.getPhoneNumber());
 		doctor.setYearsOfExperience(doctorDto.getYearsOfExperience());
 		doctor.setSpecialization(doctorDto.getSpecialization());
 		
@@ -25,9 +24,9 @@ public class DoctorMapping {
 		
 		DoctorDto doctorDto = new DoctorDto();
 		
+		doctorDto.setDoctorId(doctor.getDoctorId());
 		doctorDto.setDoctorName(doctor.getDoctorName());
 		doctorDto.setEmail(doctor.getEmail());
-		doctorDto.setPhoneNumber(doctor.getPhoneNumber());
 		doctorDto.setSpecialization(doctor.getSpecialization());
 		doctorDto.setYearsOfExperience(doctor.getYearsOfExperience());
 		

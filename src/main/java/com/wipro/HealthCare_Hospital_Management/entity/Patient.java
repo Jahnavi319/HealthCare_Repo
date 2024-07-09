@@ -26,8 +26,8 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long patientId;
 
-	@Column(name = "username")
-	private String username;
+	@Column(name = "userName")
+	private String userName;
 
 	@Column(name = "password")
 	private String password;
@@ -53,29 +53,41 @@ public class Patient {
 	@Column(name = "symptoms")
     private String symptoms;
 
-	@Column(name = "nature_of_visit")
-    private String nature_of_visit;
-    
-    @ManyToMany
-    @JoinTable(name = "Doctor_Patient",joinColumns = @JoinColumn(name = "patient_id"),inverseJoinColumns = @JoinColumn(name = "doctor_id"))
-    private Set<Doctor> doctors = new HashSet<>();
+	@Column(name = "natureOfVisit")
+    private String natureOfVisit;
+	
+	/*@ManyToMany
+	@JoinTable(
+	name = "Doctor_Patient",
+	joinColumns = @JoinColumn(name = "patientId"),
+	inverseJoinColumns = @JoinColumn(name = "doctorId")
+	)
+	private Set<Doctor> doctors = new HashSet<>();
 
-    @OneToMany(mappedBy = "patient")
+	@OneToMany(mappedBy = "patient")
     private Set<Appointment> appointment = new HashSet<>();
 
     @OneToMany(mappedBy = "patient")
-    private Set<MedicalRecord> medicalRecords = new HashSet<>();
+    private Set<MedicalRecord> medicalRecords = new HashSet<>();*/
+
+
+    
+/*    @OneToMany(mappedBy = "patient")
+    private Set<Appointment> appointment;
+
+	 @OneToOne(mappedBy = "patient")
+	 private MedicalRecord medicalRecord;*/
 
 
     
  
 
-	public Patient(Long patientId, String username, String password, String fullName, int age,
+	public Patient(Long patientId, String userName, String password, String fullName, int age,
 			String gender, String contactNumber, String appointments, String medicalHistory, String symptoms,
-			String nature_of_visit) {
+			String natureOfVisit) {
 		super();
 		this.patientId = patientId;
-		this.username = username;
+		this.userName = userName;
 		this.password = password;
 		this.fullName = fullName;
 		this.age = age;
@@ -84,7 +96,7 @@ public class Patient {
 		this.appointments = appointments;
 		this.medicalHistory = medicalHistory;
 		this.symptoms = symptoms;
-		this.nature_of_visit = nature_of_visit;
+		this.natureOfVisit = natureOfVisit;
 	}
 
 
@@ -92,6 +104,8 @@ public class Patient {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
 	
 
 	public String getFullName() {
@@ -134,13 +148,6 @@ public class Patient {
 		this.symptoms = symptoms;
 	}
 
-	public String getNature_of_visit() {
-		return nature_of_visit;
-	}
-
-	public void setNature_of_visit(String nature_of_visit) {
-		this.nature_of_visit = nature_of_visit;
-	}
 
 	public Long getPatientId() {
 		return patientId;
@@ -150,12 +157,12 @@ public class Patient {
 		this.patientId = patientId;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -182,6 +189,14 @@ public class Patient {
 		this.medicalHistory = medicalHistory;
 	}
 	
-	
+	public String getNatureOfVisit() {
+		return natureOfVisit;
+	}
+
+
+	public void setNatureOfVisit(String natureOfVisit) {
+		this.natureOfVisit = natureOfVisit;
+	}
+
 
 }

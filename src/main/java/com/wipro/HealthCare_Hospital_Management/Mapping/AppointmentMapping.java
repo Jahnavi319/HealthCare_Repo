@@ -9,11 +9,14 @@ public class AppointmentMapping {
 		
 		Appointment appointment = new Appointment();
 				
-		appointment.setId(appointmentDto.getId());		
-		appointment.setdate_time(appointmentDto.getDate_time());
-		appointment.setDescription(appointmentDto.getDescription());	
-		appointment.setLocation(appointmentDto.getLocation());				
-				
+		appointment.setAppointmentId(appointmentDto.getAppointmentId());		
+		appointment.setPatientName(appointmentDto.getPatientName());
+		appointment.setPatientAge(appointmentDto.getPatientAge());	
+		appointment.setContactNumber(appointmentDto.getContactNumber());				
+		appointment.setDateAndTime(appointmentDto.getDateAndTime());
+		appointment.setDescription(appointmentDto.getDescription());
+		appointment.setLocation(appointmentDto.getLocation());
+		
 		return appointment;
 	}
 	
@@ -21,11 +24,13 @@ public class AppointmentMapping {
 		
 		AppointmentDto appointmentDto = new AppointmentDto();
 				
-		appointmentDto.setId(appointment.getId());		
-		appointmentDto.setDate_time(appointment.getdate_time());
+		appointmentDto.setAppointmentId(appointment.getAppointmentId());		
+		appointmentDto.setPatientName(appointment.getPatientName());
+		appointmentDto.setPatientAge(appointment.getPatientAge());
+		appointmentDto.setContactNumber(appointment.getContactNumber());		
+		appointmentDto.setDateAndTime(appointment.getDateAndTime());	
 		appointmentDto.setDescription(appointment.getDescription());
-		appointmentDto.setLocation(appointment.getLocation());		
-			
+		appointmentDto.setLocation(appointment.getLocation());
 		
 		return appointmentDto;
 		

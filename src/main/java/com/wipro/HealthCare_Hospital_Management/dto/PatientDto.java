@@ -12,11 +12,11 @@ public class PatientDto {
     private String appointments;
     private String medicalHistory;
     private String symptoms;	
-    private String nature_of_visit;
+    private String natureOfVisit;
 	
     
     public PatientDto(Long patientId, String username, String password, String fullName, int age, String gender,
-			String contactNumber, String appointments, String medicalHistory, String symptoms, String nature_of_visit) {
+			String contactNumber, String appointments, String medicalHistory, String symptoms, String natureOfVisit) {
 		super();
 		this.patientId = patientId;
 		this.username = username;
@@ -28,8 +28,9 @@ public class PatientDto {
 		this.appointments = appointments;
 		this.medicalHistory = medicalHistory;
 		this.symptoms = symptoms;
-		this.nature_of_visit = nature_of_visit;
+		this.natureOfVisit = natureOfVisit;
 	}
+
 
 
 	public PatientDto() {
@@ -138,14 +139,15 @@ public class PatientDto {
 	}
 
 
-	public String getNature_of_visit() {
-		return nature_of_visit;
+	public String getNatureOfVisit() {
+		return natureOfVisit;
 	}
 
 
-	public void setNature_of_visit(String nature_of_visit) {
-		this.nature_of_visit = nature_of_visit;
+	public void setNatureOfVisit(String natureOfVisit) {
+		this.natureOfVisit = natureOfVisit;
 	}
+
     
     
 }

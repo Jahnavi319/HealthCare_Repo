@@ -4,39 +4,53 @@ import java.util.Date;
 
 public class MedicalRecordDto {
 	
-	private Long id;
+	private Long patientId;
     private String patientName;
     private int age;
     private String diagnosis;
     private String treatment;
-    private Date dateOfRecord;
-	
+    private Long appointmentId;
+
     
-    
-    public MedicalRecordDto(Long id, String patientName, int age, String diagnosis, String treatment,
-			Date dateOfRecord) {
+	public MedicalRecordDto(Long patientId, String patientName, int age, String diagnosis, String treatment,
+			Long appointmentId) {
 		super();
-		this.id = id;
+		this.patientId = patientId;
 		this.patientName = patientName;
 		this.age = age;
 		this.diagnosis = diagnosis;
 		this.treatment = treatment;
-		this.dateOfRecord = dateOfRecord;
+		this.appointmentId = appointmentId;
 	}
-    
-    
+
+
 	public MedicalRecordDto() {
 		super();
 		
 	}
 
 
-	public Long getId() {
-		return id;
+	
+	public Long getPatientId() {
+		return patientId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+
+	public void setPatientId(Long patientId) {
+		this.patientId = patientId;
 	}
+
+
+	public Long getAppointmentId() {
+		return appointmentId;
+	}
+
+
+	public void setAppointmentId(Long appointmentId) {
+		this.appointmentId = appointmentId;
+	}
+
+
 	public String getPatientName() {
 		return patientName;
 	}
@@ -61,11 +75,5 @@ public class MedicalRecordDto {
 	public void setTreatment(String treatment) {
 		this.treatment = treatment;
 	}
-	public Date getDateOfRecord() {
-		return dateOfRecord;
-	}
-	public void setDateOfRecord(Date dateOfRecord) {
-		this.dateOfRecord = dateOfRecord;
-	}
-    
+	
 }
