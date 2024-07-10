@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
+import com.wipro.healthcare_hospital_management.entity.Appointment;
+import com.wipro.healthcare_hospital_management.entity.MedicalRecord;
 import com.wipro.healthcare_hospital_management.service.AppointmentService;
 
 
@@ -49,13 +52,10 @@ public class AppointmentController {
 	}
 	
 	
-	
-    @PutMapping("/update/{id}")
-	public ResponseEntity<AppointmentDto> updateAppointment(@PathVariable Long id, @RequestBody AppointmentDto appointmentDto) {
-    	AppointmentDto savedAppointment = appointmentService.updateAppointment(id, appointmentDto);
-    	return ResponseEntity.ok(savedAppointment);
+	@PutMapping("/update/{id}")
+	public Appointment updateAppointment(@PathVariable Long id, @RequestBody AppointmentDto appointmentDto) {
+		return appointmentService.updateAppointment(id, appointmentDto);
 	}
-    
 
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Void> deleteAppointment(@PathVariable Long id) {

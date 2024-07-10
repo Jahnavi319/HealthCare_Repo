@@ -1,6 +1,7 @@
 package com.wipro.healthcare_hospital_management.service;
 
 import com.wipro.healthcare_hospital_management.dto.AdminDto;
+import com.wipro.healthcare_hospital_management.entity.Admin;
 
 public interface AdminService {
 
@@ -8,7 +9,7 @@ public interface AdminService {
 
 	AdminDto getAdminById(Long id);
 
-	AdminDto updateAdmin(Long id, AdminDto adminDto);
+	Admin updateAdmin(Long id, AdminDto adminDto);
 
 	void deleteAdmin(Long id);
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
 import com.wipro.healthcare_hospital_management.dto.DoctorDto;
+import com.wipro.healthcare_hospital_management.entity.Doctor;
 import com.wipro.healthcare_hospital_management.service.DoctorService;
 
 
@@ -44,12 +45,19 @@ public class DoctorController {
 		return ResponseEntity.ok(doctorDto);
 		
 	}
+	
 	@PutMapping("/update/{id}")
+    public Doctor updateDoctor(@PathVariable Long id, @RequestBody DoctorDto doctorDto) {
+        return doctorService.updateDoctor(id, doctorDto);
+    }
+
+
+/*	@PutMapping("/update/{id}")
 	public ResponseEntity<DoctorDto> updateDoctor(@PathVariable Long id, @RequestBody DoctorDto doctorDto) {
 	    	DoctorDto savedDoctor = doctorService.updateDoctor(id, doctorDto);
 	    	return ResponseEntity.ok(savedDoctor);
 	}
-
+*/
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Void> deleteDoctor(@PathVariable Long id) {
 			doctorService.deleteDoctor(id);

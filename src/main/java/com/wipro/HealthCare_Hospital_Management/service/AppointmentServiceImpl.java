@@ -6,7 +6,9 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
 import com.wipro.healthcare_hospital_management.entity.Appointment;
+import com.wipro.healthcare_hospital_management.entity.MedicalRecord;
 import com.wipro.healthcare_hospital_management.mapping.AppointmentMapping;
 import com.wipro.healthcare_hospital_management.repository.AppointmentRepository;
 
@@ -42,12 +44,20 @@ public class AppointmentServiceImpl implements AppointmentService{
 	}
 
 	@Override
-	public AppointmentDto updateAppointment(Long id, AppointmentDto appointmentDto) {
-		Appointment appointment = appointmentRepository.findById(id).orElseThrow(() -> new RuntimeException("Appointment does not exist"));
-        Appointment savedAppointment = appointmentRepository.save(appointment);
-        return AppointmentMapping.mapToAppointmentDto(savedAppointment);
-    }
-	
+	public Appointment updateAppointment(Long id, AppointmentDto appointmentDto) {
+	     Appointment existingAppointment = appointmentRepository.findById(id).orElseThrow(() -> new RuntimeException("Doctor not found with id: " + id));
+	        existingAppointment.setAppointmentId(appointmentDto.getAppointmentId());
+	        existingAppointment.setPatientName(appointmentDto.getPatientName());
+	        existingAppointment.setPatientAge(appointmentDto.getPatientAge());
+	        existingAppointment.setContactNumber(appointmentDto.getContactNumber());
+	        existingAppointment.setDateAndTime(appointmentDto.getDateAndTime());
+	        existingAppointment.setDescription(appointmentDto.getDescription());
+	        existingAppointment.setLocation(appointmentDto.getLocation());
+	       
+	        Appointment savedAppointment = appointmentRepository.save(existingAppointment);
+	        return appointmentRepository.save(savedAppointment);
+	      
+	 }
 	@Override
 	public void deleteAppointment(Long id) {
 		if (!appointmentRepository.existsById(id)) {

@@ -3,8 +3,9 @@ package com.wipro.healthcare_hospital_management.service;
 import org.springframework.stereotype.Service;
 
 import com.wipro.healthcare_hospital_management.dto.AdminDto;
-
+import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
 import com.wipro.healthcare_hospital_management.entity.Admin;
+import com.wipro.healthcare_hospital_management.entity.Appointment;
 import com.wipro.healthcare_hospital_management.mapping.AdminMapping;
 import com.wipro.healthcare_hospital_management.repository.AdminRepository;
 
@@ -40,11 +41,17 @@ public class AdminServiceImpl implements AdminService{
 		}
 
 		@Override
-		public AdminDto updateAdmin(Long id,AdminDto adminDto) {
-			Admin admin = adminRepository.findById(id).orElseThrow(() -> new RuntimeException("Admin does not exist"));
-	        Admin savedAdmin = adminRepository.save(admin);
-	        return AdminMapping.mapToAdminDto(savedAdmin);
-	    }
+		public Admin updateAdmin(Long id, AdminDto adminDto) {
+		     Admin existingAdmin = adminRepository.findById(id).orElseThrow(() -> new RuntimeException("Doctor not found with id: " + id));
+		        existingAdmin.setId(adminDto.getId());
+		        existingAdmin.setUsername(adminDto.getUsername());
+		        existingAdmin.setPassword(adminDto.getPassword());
+		        existingAdmin.setRole(adminDto.getRole());
+		  
+		        Admin savedAdmin = adminRepository.save(existingAdmin);
+		        return adminRepository.save(savedAdmin);
+		      
+		 }
 		
 		@Override
 		public void deleteAdmin(Long id) {

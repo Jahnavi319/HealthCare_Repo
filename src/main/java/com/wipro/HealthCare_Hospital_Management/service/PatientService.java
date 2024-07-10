@@ -1,6 +1,7 @@
 package com.wipro.healthcare_hospital_management.service;
 
 import com.wipro.healthcare_hospital_management.dto.PatientDto;
+import com.wipro.healthcare_hospital_management.entity.Patient;
 
 public interface PatientService {
 	
@@ -12,6 +13,6 @@ public interface PatientService {
 
 	void deletePatient(Long id);
 
-	PatientDto updatePatient(Long id, PatientDto patientDto);
+	Patient updatePatient(Long id, PatientDto patientDto);
 
 }

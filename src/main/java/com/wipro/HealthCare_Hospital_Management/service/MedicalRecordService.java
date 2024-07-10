@@ -1,6 +1,7 @@
 package com.wipro.healthcare_hospital_management.service;
 
 import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
+import com.wipro.healthcare_hospital_management.entity.MedicalRecord;
 
 public interface MedicalRecordService {
 
@@ -12,7 +13,9 @@ public interface MedicalRecordService {
 
 	void deleteMedicalRecord(Long id);
 
-	MedicalRecordDto updateMedicalRecord(Long id, MedicalRecordDto medicalRecordDto);
+	//MedicalRecord updateMedicalRecord(Long id, MedicalRecordDto medicalRecordDto);
+
+	MedicalRecord updateMedicalRecord(Long id, MedicalRecordDto medicalRecordDto);
 
 	
 	

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.wipro.healthcare_hospital_management.dto.AdminDto;
 import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.entity.Appointment;
 
 public interface AppointmentService {
 
@@ -15,7 +16,7 @@ public interface AppointmentService {
 	
 	void deleteAppointment(Long id);
 
-	AppointmentDto updateAppointment(Long id, AppointmentDto appointmentDto);
+	Appointment updateAppointment(Long id, AppointmentDto appointmentDto);
 
 	
     

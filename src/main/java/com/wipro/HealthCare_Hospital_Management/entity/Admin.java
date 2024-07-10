@@ -28,7 +28,7 @@ public class Admin {
 	private String password;
 	
 	@Column(name = "role")
-	private int role;
+	private String role;
 
 
     @OneToMany(mappedBy = "admin")
@@ -43,7 +43,7 @@ public class Admin {
 
 
 
-	public Admin(int id, String username, String password, int role, Set<Doctor> doctors) {
+	public Admin(int id, String username, String password, String role, Set<Doctor> doctors) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -90,15 +90,19 @@ public class Admin {
 
 
 
-	public int getRole() {
+	public String getRole() {
 		return role;
 	}
 
 
 
-	public void setRole(int role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
+
+
+
+	
 
 
 

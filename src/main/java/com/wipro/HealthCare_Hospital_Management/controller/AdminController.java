@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.healthcare_hospital_management.dto.AdminDto;
+import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.entity.Admin;
+import com.wipro.healthcare_hospital_management.entity.Appointment;
 import com.wipro.healthcare_hospital_management.service.AdminService;
 
 
@@ -43,10 +46,10 @@ private AdminService adminService;
 		
 	}
 	
-    @PutMapping("/update/{id}")
-	public ResponseEntity<AdminDto> updateAdmin(@PathVariable Long id, @RequestBody AdminDto adminDto) {
-    	AdminDto savedAdmin = adminService.updateAdmin(id, adminDto);
-    	return ResponseEntity.ok(savedAdmin);
+
+	@PutMapping("/update/{id}")
+	public Admin updateAdmin(@PathVariable Long id, @RequestBody AdminDto adminDto) {
+		return adminService.updateAdmin(id, adminDto);
 	}
 
 	@DeleteMapping("/delete/{id}")

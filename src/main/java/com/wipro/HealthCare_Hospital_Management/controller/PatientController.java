@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wipro.healthcare_hospital_management.dto.AppointmentDto;
+import com.wipro.healthcare_hospital_management.dto.MedicalRecordDto;
 import com.wipro.healthcare_hospital_management.dto.PatientDto;
+import com.wipro.healthcare_hospital_management.entity.MedicalRecord;
+import com.wipro.healthcare_hospital_management.entity.Patient;
 import com.wipro.healthcare_hospital_management.service.PatientService;
 
 
@@ -42,10 +45,10 @@ public class PatientController {
 		return ResponseEntity.ok(patientDto);
 		
 	}
+	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<PatientDto> updatePatient(@PathVariable Long id, @RequestBody PatientDto patientDto) {
-	    	PatientDto savedPatient = patientService.updatePatient(id, patientDto);
-	    	return ResponseEntity.ok(savedPatient);
+    public Patient updatePatient(@PathVariable Long id, @RequestBody PatientDto patientDto) {
+		return patientService.updatePatient(id, patientDto);
 	}
 
 	@DeleteMapping("/delete/{id}")
